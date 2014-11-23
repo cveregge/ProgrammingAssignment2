@@ -1,9 +1,6 @@
 #Matrix function that stores a matrix and the matrix inverse
 #and a function that returns a cached object or 
 
-#for testing clear workspace before each run
-rm(list=ls())
-
 #this is a matrix "object" with functions to get and set
 #the matrix or matrix inverse
 
@@ -56,16 +53,3 @@ cacheSolve <- function(x, ...) {
   x$setInverse(solve(m))
   
 }
-
-#code to demonstrate the functions work
-a <- makeCacheMatrix()
-
-a$set(matrix(1:4,c(2,2)))
-a$get()
-a$getInverse()
-cacheSolve(a)
-a$getInverse()
-cacheSolve(a)
-a$getInverse()
-
-a$get() %*% a$getInverse()
