@@ -1,7 +1,7 @@
-## Put comments here that give an overall description of what your
-## functions do
+#Matrix function that stores a matrix and the matrix inverse
+#and a function that returns a cached object or 
 
-#for testing clear workspace
+#for testing clear workspace before each run
 rm(list=ls())
 
 #this is a matrix "object" with functions to get and set
@@ -50,12 +50,14 @@ cacheSolve <- function(x, ...) {
   }
   
   #if the function hasn't returned yet then we need to calculate the inverse
+  message("calculating inverse")
   m <- x$get()
   
   x$setInverse(solve(m))
   
 }
 
+#code to demonstrate the functions work
 a <- makeCacheMatrix()
 
 a$set(matrix(1:4,c(2,2)))
